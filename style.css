@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'calculator';
+    src: url('./fonts/Calculator.ttf') format('woff2');
+}
+    
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+
+    --pg-background: #0f0f0f;
+    --app-background: #1F1F1F;
+    
+    --btn-primary-bg: #BB86FC; 
+    --btn-primary-hover: #9B63E4;
+    --btn-primary-active: #7B4BBD;
+    
+    --btn-secondary: #03DAC6; 
+    --btn-secondary-hover: #02B4A3;
+    --btn-secondary-active: #029081;
+    
+    --app-shadow: rgba(0, 0, 0, 0.4);
+    
+    --footer-bg: #675599;
+
+    --ff-primary: 'Arial', sans-serif; 
+}
+
+html.light{
+    
+    --pg-background: #F5F5FA;
+    --app-background: #FFFFFF;
+
+    --btn-primary-bg: #4A90E2;
+    --btn-primary-hover: #357ABD;
+    --btn-primary-active: #2B6399;
+
+    --btn-secondary: #FFB74D; 
+    --btn-secondary-hover: #F0A338;
+    --btn-secondary-active: #DB8E22;
+
+    --footer-bg: #90bcff;
+
+    --app-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body,html{
+    transition: .4s ease-in-out;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    background-color: var(--pg-background);
+
+    font-family: var(--ff-primary);
+    font-size: 1.6rem;
+    
+}
+
+#app{
+    background-color: var(--app-background);
+    padding: 2.5rem 2.5rem 5rem 2.5rem;
+    
+    border-radius: 3rem;
+    box-shadow: .1rem 0 .5rem 0 var(--app-shadow);
+}
+
+header{
+    background-color: rgb(255, 255, 255);
+    box-shadow: .1rem 0 .5rem 0 var(--app-shadow);
+
+    font-family: calculator;
+    font-size: 2rem;
+    font-weight: 600;
+
+
+    width: 33rem;
+    height: 8rem;
+    margin-bottom: 3rem; 
+
+    border-radius: 2rem;
+}
+#solution{
+    font-size: 4rem;
+    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+section.horizontal{
+    display: flex;
+    gap: 1rem;
+}
+
+section#buttons-wrapper{
+    display: flex;
+    gap: 1rem;
+
+}
+
+button {
+    width: 7.5rem;
+    height: 5rem; 
+    font-size: 1.6rem; 
+    background-color: var(--btn-primary-bg);
+
+    border:none;
+    border-radius: 1.45rem;
+    box-shadow: 0rem 4px 0rem 0 var(--app-shadow);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--btn-primary-hover);
+}
+button:active{
+    background-color: var(--btn-primary-active);
+}
+
+button#calculate-btn{
+    height: 11rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: .2re;
+    background-color: var(--footer-bg);
+    color: #ebebeb;
+    text-align: center;
+    font-weight: bold;
+}
+footer a{
+    color: white;
+    text-decoration: underline;
+}
+footer a:hover{
+    color: rgb(12, 36, 255);
+}
+
+/* assets */
+
+.container{  /*do header*/
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+
+    padding-top: 1rem;
+    padding-right: 1.5rem;
+
+    overflow: hidden;
+    max-width: 100%;
+    white-space: none;
+}
+
+.first-line, .second-line, .third-line, .fourth-line {
+    display: flex; 
+    margin-top: 1rem;
+    gap: 1rem; 
+}
+
+.column{
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.secondary-color > button{
+    background-color: var(--btn-secondary);
+    color: white;
+}
+.secondary-color > button:hover{
+    background-color: var(--btn-secondary-hover);
+    color: white;
+}
+
+.secondary-color > button:active{
+    background-color: var(--btn-secondary-active);
+    color: white;
+}
+
+
+
+/* LIGHT - DARK MODE*/
+
+#mode{
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    line-height: 0;
+
+}
+
+.ph-bold.ph-sun, .ph-bold.ph-moon{
+    cursor: pointer;
+    font-size: 4.5rem;
+}
+
+.ph-bold.ph-sun{
+    display: block;
+    color: white;
+}
+
+.ph-bold.ph-bold.ph-moon{
+    display: none;
+    color: black;
+}
+
+.ph-bold.ph-sun:hover{
+    display: block;
+    transform: scale(1.1);
+    color: rgb(204, 204, 204);
+}
+.ph-bold.ph-bold.ph-moon:hover{
+    display: block;
+    transform: scale(1.1);
+    color: rgb(39, 39, 39);
+}
+.ph-bold.ph-bold.ph-moon:active{
+    display: block;
+    transform: scale(1);
+}
+
+.ph-bold.ph-sun:active{
+    display: block;
+    transform: scale(1);
+}
